@@ -1,0 +1,154 @@
+body
+{
+    background:url('../images/fond1.jpg') no-repeat center fixed;
+    -webkit-background-size: cover;
+    color: white;
+}
+
+
+#logo {
+    width: 80px;
+    height: 80px;
+}
+
+h1 {
+    display: inline-block;
+    position: relative;
+    bottom: 30px;
+    left: 500px;
+    text-align: center;
+
+}
+.menus {
+    display: inline-block;
+    position: relative;
+    float: right;
+    top: 30px;
+}
+.menuLink {
+    padding: 10px;
+}
+
+nav img {
+    width:25px;
+    height:25px;
+    position:relative;
+    top:5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.pres {
+    display: inline-block;
+    position: relative;
+    width: 500px;
+    height: 400px;
+    left: 500px;
+    top: 30px;
+    background: black ;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    /* Mozilla */
+    opacity: 0.6;
+    /* CSS3 */
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#pp {
+    display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 145px;
+}
+
+#pp img {
+    width: 150px;
+    height: 150px;
+}
+
+#description {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+#box-form {
+    margin-left: 10px;
+    text-align: center;
+}
+.form-inscription {
+    display: block;
+    position: relative;
+}
+
+.lab-form {
+    display: block;
+    width: 140px;
+}
+.input-form
+{
+    display: inline-block;
+    position: relative;
+    bottom: 20px;
+    border: 2px solid navajowhite;
+    border-radius: 5px;
+}
+#button {
+    display: block;
+    position: relative;
+    left: 150px;
+    top: 30px;
+    border:2px solid white;
+    border-radius: 5px;
+    width: 200px;
+
+}
+
+#inscription {
+    border: 2px solid black;
+    background: darkcyan;
+    border-radius: 5px;
+    width: 200px;
+    height: 30px;
+}
+#connect {
+    display: inline-block;
+    position: relative;
+    left: 185px;
+    top: 50px;
+
+
+}
+#connect a {
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    display: block;
+    position: relative;
+    top: 85px;
+    background: black ;
+    filter: alpha(opacity=60);
+    -moz-opacity: 0.6;
+    /* Mozilla */
+    opacity: 0.6;
+    /* CSS3 */
+}
+#fp {
+    text-align: center;
+}
+.mfooter {
+    display: block;
+    position: relative;
+}
+.compFooter{
+    display: inline-block;
+    position: relative;
+    width: 200px;
+    margin-left: 100px;
+}
