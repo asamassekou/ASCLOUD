@@ -9,13 +9,16 @@ class ContInscription{
     public $vue;
 
     public function __construct() {
-        //  $this->modele = new ModeleInscription();
+        $this->modele = new ModeleInscription();
         $this->vue = new VueInscription();
     }
 
     public function inscription()
     {
-        $this->vue->inscription();
+        $msg = $this->modele->inscription();
+
+        $this->modele->inscription();
+        $this->vue->inscription($msg);
     }
 
 

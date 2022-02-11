@@ -100,8 +100,8 @@ nav a {
 #button {
     display: block;
     position: relative;
-    left: 150px;
-    top: 30px;
+    left: 30%;
+    top: 10px;
     border:2px solid white;
     border-radius: 5px;
     width: 200px;
@@ -114,18 +114,24 @@ nav a {
     border-radius: 5px;
     width: 200px;
     height: 30px;
+
 }
 #connect {
     display: inline-block;
     position: relative;
     left: 10px;
-    top: 50px;
+    top: 30px;
 }
 #connect a {
     text-decoration: none;
     color: white;
 }
 
+#error {
+    position: relative;
+    color: red;
+    font-weight: bold;
+}
 footer {
     display: block;
     position: relative;

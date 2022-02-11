@@ -5,7 +5,7 @@ class VueInscription {
 
     }
 
-    public function inscription() {
+    public function inscription($msg) {
 
         ?>
         <!doctype html>
@@ -36,7 +36,7 @@ class VueInscription {
                 <h2> INSCRIPTION </h2>
             </div>
             <div id="box-form">
-            <form method="POST" action="index.php">
+            <form method="POST" action="">
                 <div class="form-inscription">
                     <label class="lab-form"> Nom : </label>
                     <input type="text" name="nom" id="nom" class="input-form" />
@@ -54,14 +54,18 @@ class VueInscription {
 
                 <div class="form-inscription">
                     <label class="lab-form" > mot de passe : </label>
-                    <input type="text" name="mdp1" id="nom" class="input-form"  />
+                    <input type="password" name="mdp1" id="nom" class="input-form"  />
                 </div>
 
                 <div class="form-inscription">
                     <label class="lab-form" > confirmation mot de passe : </label>
-                    <input type="text" name="mdp2" id="nom" class="input-form"  />
+                    <input type="password" name="mdp2" id="nom" class="input-form"  />
                 </div>
-
+                <div id="error">
+                    <?php
+                    if(isset($msg)) echo $msg;
+                    ?>
+                </div>
                 <div id="button">
                     <button id="inscription" name="inscription" > INSCRIVEZ-VOUS </button>
                 </div>
@@ -70,6 +74,7 @@ class VueInscription {
             <div id="connect">
                 <a id="connexion" href="index.php?module=compte&action=compte">j'ai déjà un compte</a>
             </div>
+
         </div>
         </div>
         <FOOTER>

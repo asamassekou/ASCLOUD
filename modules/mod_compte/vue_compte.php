@@ -22,7 +22,7 @@ public function pagePrincipal() {
 <header>
     <NAV id="mainNav">
         <a href="../../index.php" > <img id="logo" src="../../images/logo.png" alt="Logo du site"/> </a>
-        <h1> BIENVENUE SUR ASCLOUD </h1>
+        <form method="GET"> <input type="search" id="search" name=""search placeholder="Rechercher..."/> </form>
         <nav class="menus">
             <a class="menuLink" href=""> Accueil </a>
             <a class="menuLink" href="">  Aide </a>
