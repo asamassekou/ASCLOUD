@@ -118,10 +118,8 @@ nav a {
 #connect {
     display: inline-block;
     position: relative;
-    left: 185px;
+    left: 10px;
     top: 50px;
-
-
 }
 #connect a {
     text-decoration: none;

@@ -62,7 +62,6 @@ class VueInscription {
                     <input type="text" name="mdp2" id="nom" class="input-form"  />
                 </div>
 
-
                 <div id="button">
                     <button id="inscription" name="inscription" > INSCRIVEZ-VOUS </button>
                 </div>
