@@ -45,7 +45,7 @@ public function affichage() {
     </form>
 
     <div id="connect">
-        <a id="connexion" href="index.php?module=compte&action=compte">j'ai déjà un compte</a>
+        <a id="connexion" href="index.php?module=connexion&action=connexion">j'ai déjà un compte</a>
     </div>
 </div>
 
