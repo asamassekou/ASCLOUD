@@ -13,6 +13,7 @@ class VueConnexion {
         <head>
             <meta charset="utf-8">
             <title>ASCLOUD - inscription</title>
+            <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
             <link rel="stylesheet" href="css/connexion.css">
             <script src="script.js"></script>
         </head>

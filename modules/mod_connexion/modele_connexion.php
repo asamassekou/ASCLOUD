@@ -20,12 +20,13 @@ class ModeleConnexion
             if(isset($_POST['email']) AND !empty($_POST['email']) AND isset($_POST['mdp']) AND !empty($_POST['mdp']))
             {
                 $email = htmlspecialchars($_POST['email']);
-                $mdp = sha1($_POST['mdp']);
+                $mdp = hash('sha256', $_POST['mdp']);
 
                 $sql = $bdd->prepare('SELECT * FROM user WHERE email = ?');
                 $sql->execute(array($email));
                 $check = $sql->fetch();
 
+                $idUser = $check['idUser'];
                 $Vraimail = $check['email'];
                 $vraimdp = $check['mdp'] ;
 
@@ -41,9 +42,10 @@ class ModeleConnexion
                     }
                 else
                 {
+                    $_SESSION['user'] = $idUser;
                     $_SESSION['email'] = $email;
                     $_SESSION['mdp'] = $mdp;
-                    header('Location: index.php?module=compte&action=compte');
+                    header('Location: index.php?module=compte&action=compte&user='.$idUser);
                 }
             }
         }

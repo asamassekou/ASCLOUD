@@ -21,8 +21,8 @@ require_once 'config.php';
                 $nom = htmlspecialchars($_POST['nom']);
                 $prenom = htmlspecialchars($_POST['prenom']);
                 $email = htmlspecialchars($_POST['email']);
-                $mdp1 = sha1($_POST['mdp1']);
-                $mdp2 = sha1($_POST['mdp2']);
+                $mdp1 = hash('sha256', $_POST['mdp1']);
+                $mdp2 = hash('sha256', $_POST['mdp2']);
                 $sql = $bdd->prepare('SELECT * FROM user WHERE email = ?');
                 $sql->execute(array($email));
                 $row = $sql->rowCount();
@@ -48,11 +48,16 @@ require_once 'config.php';
                     $insUser = $bdd->prepare('INSERT INTO user(nom,prenom,email,mdp) VALUES (?,?,?,?)');
                     $insUser->execute(array($nom,$prenom,$email,$mdp1));
 
+                    $check = $bdd->prepare('SELECT * FROM user WHERE email='. $email);
+                    $check = $check->fetch();
+                    $idUser = $check['idUser'];
+
+                    $_SESSION['user'] = $idUser;
                     $_SESSION['nom'] = $nom;
                     $_SESSION['prenom'] = $prenom;
                     $_SESSION['email'] = $email;
 
-                    header('Location:index.php?module=compte&action=compte');
+                    header('Location:index.php?module=compte&action=compte&user=' . $_SESSION['user']);
                 }
             }
         }

@@ -1,9 +1,9 @@
 <?php
 
-include_once 'vue_compte.php';
-include_once 'modele_compte.php';
+include_once 'vue_dossier.php';
+include_once 'modele_dossier.php';
 
-class ContCompte{
+class ContDossier{
 
     public $modele;
     public $vue;
@@ -13,16 +13,12 @@ class ContCompte{
         if(isset($_GET['action'])){
             $this->action = $_GET['action'];
         }
-        $this->modele = new ModeleCompte();
         $this->vue = new VueCompte();
     }
 
     public function pagePrincipal()
     {
-        if (isset($_GET['user'])) {
-            $fichier = $this->modele->compte();
-            $this->vue->pagePrincipal($fichier);
-        }
+        $this->vue->pagePrincipal();
     }
 
     public function deconnexion()

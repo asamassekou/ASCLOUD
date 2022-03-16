@@ -13,6 +13,7 @@ class VueInscription {
         <head>
             <meta charset="utf-8">
             <title>ASCLOUD - inscription</title>
+            <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
             <link rel="stylesheet" href="css/inscription.css">
             <script src="script.js"></script>
         </head>
@@ -72,7 +73,7 @@ class VueInscription {
             </form>
 
             <div id="connect">
-                <a id="connexion" href="index.php?module=compte&action=compte">j'ai déjà un compte</a>
+                <a id="connexion" href="index.php?module=connexion&action=connexion">j'ai déjà un compte</a>
             </div>
 
         </div>

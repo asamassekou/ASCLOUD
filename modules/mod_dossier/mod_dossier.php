@@ -1,8 +1,8 @@
 <?php
 
-require_once 'cont_compte.php';
+require_once 'cont_dossier.php';
 
-class ModCompte{
+class ModDossier{
 
     private $controleur;
 

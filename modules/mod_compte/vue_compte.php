@@ -5,8 +5,9 @@ public function __construct() {
 
 }
 
-public function pagePrincipal() {
-
+public function pagePrincipal($fichier) {
+//if(!isset($_POST['user'])){ header('Location:index.php');}
+if(isset($_GET['user'])){
 ?>
 
 <!doctype html>
@@ -14,6 +15,7 @@ public function pagePrincipal() {
 <head>
     <meta charset="utf-8">
     <title>ASCLOUD - Connexion</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
     <link rel="stylesheet" href="../../css/compte.css">
     <script src="script.js"></script>
 </head>
@@ -26,16 +28,26 @@ public function pagePrincipal() {
         <nav class="menus">
             <a class="menuLink" href=""> Accueil </a>
             <a class="menuLink" href="">  Aide </a>
-            <a class="menuLink" href=""> Mon Compte </a>
+            <a class="menuLink" href="index.php?module=compte&action=deconnexion"> Déconnexion </a>
         </nav>
     </NAV>
 
 </header>
+
 <div id="zone">
     <div class ="control">
         <form method="POST" action="">
             <div class="buttonBox">
-                <button name="new" class="button" id="new"> Nouveau </button>
+            <!--    <button name="new" class="button" id="new"> Nouveau </button> -->
+                <ul class="menu" id="new">
+                    <li>
+                        Nouveau
+                        <ul class="sub-menu">
+                            <li><a id="contLi" href="index.php?module=fichier&action=fichier"> Fichier </a> </li>
+                            <li> <a id="contLi" href="index.php?module=dossier&action=dossier"> Dossier </a> </li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="buttonBox">
                 <button name="monDrive" class="button"id="monDrive" > Mon Drive </button>
@@ -50,21 +62,19 @@ public function pagePrincipal() {
     </div>
     <div class="control2">
         <form method="POST" action="">
-            <div class="ImagesBox">
-                <a href="dossier.php" > <img class="dossier" src="../../images/dossier.png" alt="dossier"/> </a>
-                <p> dossier </p>
-            </div>
-            <div class="ImagesBox">
-                <a href="dossier.php" > <img class="dossier" src="../../images/dossier.png" alt="dossier"/> </a>
-                <p> dossier </p>
-            </div>
-            <div class="ImagesBox">
-                <a href="fichier.php" > <img class="dossier" src="../../images/fichier.png" alt="dossier"/> </a>
-                <p> fichier </p>
-            </div>
-            <div class="ImagesBox">
-                <a href="dossier.php" > <img class="dossier" src="../../images/dossier.png" alt="dossier"/> </a>
-                <p> dossier </p>
+
+        <?php
+
+            if($fichier->rowCount() > 0) {
+             while($fichiers = $fichier->fetch()) {
+                ?>
+                    <div class="ImagesBox">
+                        <a href="index.php?module=compte&action=fichier" > <img class="dossier" src="../../images/fichier.png" alt="dossier"/> </a>
+                        <p> <?=$fichiers['dateFichier'];?> </p>
+
+                    </div>
+                <?php
+            } }?>
             </div>
         </form>
     </div>
@@ -77,6 +87,9 @@ public function pagePrincipal() {
 </html>
 
 <?php
+    } else{
+    echo "OUPSS... Assurez vous d'avoir tapez la bonne adresse!";
     }
+}
 }
 ?>
