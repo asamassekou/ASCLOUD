@@ -13,6 +13,12 @@ class ModFichier{
             case "fichier":
                 $this->controleur->pageFichier();
                 break;
+            case "fichierPerso":
+                $this->controleur->pageFichierPerso();
+                break;
+            case "AccesRefuser":
+                $this->controleur->pageAccesFichier();
+                break;
             default:
                 break;
 

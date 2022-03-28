@@ -19,9 +19,13 @@ class ContCompte{
 
     public function pagePrincipal()
     {
-        if (isset($_GET['user'])) {
+        if (isset($_GET['user']))
+        {
             $fichier = $this->modele->compte();
-            $this->vue->pagePrincipal($fichier);
+            //$extension = $this->modele->extension();
+            $recherche = $this->modele->recherche();
+            $search = $this->modele->getSearch();
+            $this->vue->pagePrincipal($fichier, $recherche, $search);
         }
     }
 

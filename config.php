@@ -1,9 +1,9 @@
 <?php
 
 class Config{
-     static protected $bdd;
+    static protected $bdd;
 
-     static function initConnexion(){
+    static function initConnexion(){
         $dns="mysql:host=localhost;dbname=cloud";
         $user="asamassekou";
         $password="admin";
@@ -12,14 +12,13 @@ class Config{
     }
 
     static function cookies() {
-        setcookie('accepter',true,time() + 365*24*3600);
+        setcookie('secureFile',true,time() + 300);
         header('Location:./');
     }
 
     static function token() {
-        if (!isset($_SESSION['jeton'])) {
-            $_SESSION['jeton'] = bin2hex(openssl_random_pseudo_bytes(6));
-        }
+            $token = bin2hex(openssl_random_pseudo_bytes(3));
+            return $token;
     }
 }
 

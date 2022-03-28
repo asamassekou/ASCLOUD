@@ -1,11 +1,11 @@
 <?php
-class VueCompte {
+class VueMessage {
 
     public function __construct() {
 
     }
 
-    public function pagePrincipal($fichier, $recherche, $search) {
+    public function pageMessage($fichier) {
 //if(!isset($_POST['user'])){ header('Location:index.php');}
         if(isset($_GET['user'])){
             ?>
@@ -50,13 +50,13 @@ class VueCompte {
                             </ul>
                         </div>
                         <div class="buttonBox">
-                            <button name="monDrive" formaction="index.php?module=compte=action=compte&user=<?= $_SESSION['user']; ?>" class="button"id="monDrive" > Mon Cloud </button>
+                            <button name="monDrive" class="button"id="monDrive" > Mon Cloud </button>
                         </div>
                         <div class="buttonBox">
-                            <button name="reception" formaction="index.php?module=message=action=message&user=<?= $_SESSION['user']; ?>" class="button" id="reception" > Réception </button>
+                            <button name="reception" class="button" id="reception" > Réception </button>
                         </div>
                         <div class="buttonBox">
-                            <button  type="button" name="favoris" formaction="index.php?module=favoris=action=favoris&user=<?= $_SESSION['user']; ?>" class="button" id="favoris"> Favoris </button>
+                            <button  type="button" name="favoris" class="button" id="favoris"> Favoris </button>
                         </div>
                     </form>
                 </div>
@@ -66,9 +66,9 @@ class VueCompte {
 
                         <?php
 
-                        if($recherche->rowCount() > 0) {
-                            while($recherches = $recherche->fetch()) {
-                                $extension = strtolower(substr(strrchr($recherches['nomFichier'], '.'), 1));
+                        if($fichier->rowCount() > 0) {
+                            while($fichiers = $fichier->fetch()) {
+                                $extension = strtolower(substr(strrchr($fichiers['nomFichier'], '.'), 1));
                                 ?>
 
                                 <script type="text/javascript">
@@ -83,28 +83,28 @@ class VueCompte {
                                     switch ($extension)
                                     {
                                         case "zip":
-                                            if($recherches['securise'] == NULL) {?>
+                                            if($fichiers['securise'] == NULL) {?>
                                                 <div class ="test">
-                                                    <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../images/logoZIP.png" alt="fichier ZIP"/> </a>
+                                                    <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../images/logoZIP.png" alt="fichier ZIP"/> </a>
                                                     <p id ="fich"> fichier ZIP </p>
                                                 </div>
                                             <?php }else { ?>
                                                 <div class ="test">
-                                                    <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="fichier ZIP"/> </a>
+                                                    <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="fichier ZIP"/> </a>
                                                     <p id ="fich"> fichier ZIP </p>
                                                 </div>
                                             <?php }
 
                                             break;
                                         case "pdf":
-                                            if($recherches['securise'] == NULL) {?>
+                                            if($fichiers['securise'] == NULL) {?>
                                                 <div class ="test">
-                                                    <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../images/icone-pdf.jpg" alt="dossier"/> </a>
+                                                    <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../images/icone-pdf.jpg" alt="dossier"/> </a>
                                                     <p id ="fich">fichier pdf</p>
                                                 </div>
                                             <?php }else { ?>
                                                 <div class ="test">
-                                                    <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="fichier ZIP"/> </a>
+                                                    <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="fichier ZIP"/> </a>
                                                     <p id ="fich"> fichier pdf </p>
                                                 </div>
                                             <?php }
@@ -114,15 +114,15 @@ class VueCompte {
                                         case "gif":
                                         case "jpeg":
                                         case "jpg":
-                                            if($recherches['securise'] == NULL) {?>
-                                                <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../<?= $recherches['nomFichier']; ?>" alt="dossier"/> </a>
+                                            if($fichiers['securise'] == NULL) {?>
+                                                <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../<?= $fichiers['nomFichier']; ?>" alt="dossier"/> </a>
                                                 <div id="divAuDessus"> <img id="imgAuDessus" src="../../images/icone-fichier.png"> </div>
-                                                <p id ="fich">fichier <?=$recherches['idFichier'];?> </p>
+                                                <p id ="fich">fichier <?=$fichiers['idFichier'];?> </p>
                                                 <div id="image"></div>
 
                                             <?php }else {  ?>
-                                                <a href = "<?= $recherches['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="dossier"/> </a>
-                                                <p id ="fich">fichier <?=$recherches['idFichier'];?> </p>
+                                                <a href = "<?= $fichiers['url']?>"> <img  class="fichier" src="../../images/fichier.png" alt="dossier"/> </a>
+                                                <p id ="fich">fichier <?=$fichiers['idFichier'];?> </p>
                                                 <div id="image"></div>
                                             <?php }
                                             break;
@@ -138,7 +138,7 @@ class VueCompte {
                 </form>
             </div>
             </div>
-            <h2 id ="nomChamp"> Mon Cloud </h2>
+            <h2 id ="nomChamp"> Boite de reception </h2>
 
 
 

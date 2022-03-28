@@ -5,6 +5,7 @@ body
     -webkit-background-size: cover;
     color: white;
     height: 100%;
+
 }
 
 #logo
@@ -112,12 +113,6 @@ h1
     position: relative;
     left: 20px;
     bottom: 400px;
-}
-
-p
-{
-    background: #2e7272;
-    text-align: center;
 }
 #zone {
     display: inline-block;
@@ -249,6 +244,8 @@ a
     display: block;
     margin-left: auto;
     margin-right: auto;
+    filter:blur(15px);
+
 }
 #imgFichier
 {
@@ -262,6 +259,8 @@ a
 #div-btn-telecharger
 {
     margin:20px ;
+    filter:blur(15px);
+
 }
 .btn-download
 {
@@ -270,11 +269,12 @@ a
     margin-right: auto;
     border: 2px solid black;
     background: darkcyan;
-    text-align: center;
     border-radius: 5px;
     width: 200px;
     height: 30px;
     margin-bottom: 20px;
+    filter:blur(15px);
+
 }
 
 .secureFile
@@ -284,20 +284,19 @@ a
     float: right;
     bottom: 500px;
 }
-#box-form {
+#box-form-file
+{
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 640px;
     text-align: center;
     position: relative;
-    float: right;
-    bottom:300px;
-    right: 100px;
     background-color: cadetblue;
-
     border-radius: 5px;
-    /*background:url('../images/cadenaaa.jpg') no-repeat center;*/
+    bottom:500px;
+
+      /*background:url('../images/cadenaaa.jpg') no-repeat center;*/
 }
-.form-inscription {
+.form-openFile {
     display: block;
     position: relative;
     filter: alpha(opacity=60);
@@ -312,17 +311,6 @@ a
     display: block;
     width: 140px;
 }
-
-#div-Modif
-{
-    margin-left: 600px;
-    text-align: center;
-    background: #2e7272;
-    border: 2px solid white;
-    border-radius: 7px;
-    color: white;
-    width: 300px;
-}
 .input-form
 {
     display: inline-block;
@@ -332,18 +320,19 @@ a
     border-radius: 5px;
     margin: 10px;
 }
-#button {
+#button-openFile {
     display: block;
     position: relative;
+    text-align: center;
     bottom: 5px;
     border:2px solid white;
     border-radius: 5px;
     width: 150px;
-    left: 20px;
+    left: 35px;
 
 }
 
-#Buttonconnexion {
+#ButtonOpenFile {
     border: 2px solid black;
     background: darkcyan;
     border-radius: 5px;
@@ -351,7 +340,7 @@ a
     height: 30px;
 
 }
-#h2Fich
+#h2Fich-2
 {
     background-color: darkcyan;
     color: white;
